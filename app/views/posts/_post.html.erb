@@ -1,0 +1,9 @@
+<div class="post">
+  <%= link_to post_path(post.id) do %>
+  
+    <div><%= post.user %></div>
+    <div><%= post.title %></div>
+
+    <div><%= post.content%></div>
+<% end %>
+</div>

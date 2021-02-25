@@ -8,7 +8,12 @@
 #
 10.times do |i|
   #create post
-  Post.create!(user: Faker::Name.name,
+  post = Post.create!(user: Faker::Name.name,
                title: Faker::Hipster.sentence,
                content: Faker::Hipster.paragraphs(number: 1))
+  3.times do |i|
+    post.comments.create!(user: "Commenter #{i+1}",
+                          content: "this post is ok")
+  end
+
 end

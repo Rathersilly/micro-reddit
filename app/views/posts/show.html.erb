@@ -2,7 +2,7 @@
 <div class="post">
   <p>
     <strong>User:</strong>
-    <%= @post.user %>
+    <%= @post.user.name %>
   </p>
 
   <p>
@@ -14,10 +14,14 @@
     <strong>Content:</strong>
     <%= @post.content %>
   </p>
-  <% @post.comments.each do |c| %>
+  <% @post.comments.where(parent: nil).each do |comment| %>
     <div class="comment">
-      <p><%= c.user %></p>
-      <p><%= c.content %></p>
+      <%= render partial: 'comments/comment', locals: {comment: comment} %>
+      <% comment.children.each do |child| %>
+        <div class="comment">
+          <%= render child %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>

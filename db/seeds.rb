@@ -7,13 +7,33 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 10.times do |i|
+  name = Faker::Name.first_name
+  user = User.create!(name: name,
+                      email: "#{name}#{i}@example.com")
+end
+
+users = User.all
+10.times do |i|
+  user = users.sample
+
   #create post
-  post = Post.create!(user: Faker::Name.name,
+  post = Post.create!(user: user,
                title: Faker::Hipster.sentence,
                content: Faker::Hipster.paragraphs(number: 1))
   3.times do |i|
-    post.comments.create!(user: "Commenter #{i+1}",
-                          content: "this post is ok")
+    
+    user = users.sample
+     
+    adjectives = [Faker::Adjective.positive, Faker::Adjective.negative, Faker::Hacker.adjective]
+
+    comment = post.comments.create!(user: user,
+                                    content: "this post is #{adjectives.sample}")
+    2.times do |j|
+      user = users.sample
+      post.comments.create!(user: user,
+                                content: "this comment is #{adjectives.sample}",
+                                parent: comment)
+    end
   end
 
 end

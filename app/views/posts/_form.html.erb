@@ -12,8 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user %>
-    <%= form.text_field :user %>
+    <%= form.collection_select  :user_id, User.all, :id, :name %>
+    <%# form.label :user %>
+    <%# form.text_field :user %>
   </div>
 
   <div class="field">

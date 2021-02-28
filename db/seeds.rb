@@ -19,7 +19,7 @@ users = User.all
   #create post
   post = Post.create!(user: user,
                title: Faker::Hipster.sentence,
-               content: Faker::Hipster.paragraphs(number: 1))
+               content: Faker::Hipster.paragraphs(number: 1)[0])
   3.times do |i|
     
     user = users.sample

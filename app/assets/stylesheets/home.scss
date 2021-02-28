@@ -1,7 +1,55 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.post {
+:root {
+  --header_height: 40px;
+}
+
+.body_column {
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: lightblue;;
+  position: absolute;
+
+}
+.body_column > * {
+  background-color: snow;
+  margin-top: 0;
+}
+
+header {
+  background-color: black;
+  color: white;
+  height: var(--header_height);
+  
+}
+
+.navleft {
+  height: var(--header_height);
+  margin-left: 20%;
+  margin-right: 50%;
+  float: left;
+  line-height: var(--header_height);
+
+}
+.header_title {
+  font-size: 18px;
+  height:100%;
+}
+
+.navright {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 5%;
+  float: right;
+}
+.navitem {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.post_container {
   background-color: snow;
   border: 2px solid black;
   margin: 5px;

@@ -1,9 +1,4 @@
-<div class="post">
-  <%= link_to post_path(post.id) do %>
-  
-    <div><%= post.user.name %></div>
-    <div><%= post.title %></div>
-
-    <div><%= post.content%></div>
-<% end %>
+<div class="post_container">
+  <%= render partial: 'posts/post_header', locals: {post: post}  %>
+  <div><%# post.content%></div>
 </div>

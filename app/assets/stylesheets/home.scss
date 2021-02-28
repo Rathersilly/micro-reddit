@@ -8,8 +8,10 @@
 .body_column {
   margin-left: 20%;
   margin-right: 20%;
-  background-color: lightblue;;
+  top: var(--header_height);
   position: absolute;
+  height:100%;
+  background-color: lightblue;
 
 }
 .body_column > * {
@@ -27,7 +29,6 @@ header {
 .navleft {
   height: var(--header_height);
   margin-left: 20%;
-  margin-right: 50%;
   float: left;
   line-height: var(--header_height);
 

@@ -18,18 +18,20 @@ users = User.all
 
   #create post
   post = Post.create!(user: user,
-               title: Faker::Hipster.sentence,
-               content: Faker::Hipster.paragraphs(number: 1)[0])
+               title: Faker::Hipster.sentence,  # => 
+               content: Faker::Hipster.paragraphs(number: 1)[0],
+                upvotes: rand(20),
+                downvotes: rand(20))
   3.times do |i|
-    
     user = users.sample
-     
     adjectives = [Faker::Adjective.positive, Faker::Adjective.negative, Faker::Hacker.adjective]
 
     comment = post.comments.create!(user: user,
                                     content: "this post is #{adjectives.sample}")
     2.times do |j|
       user = users.sample
+      adjectives = [Faker::Adjective.positive, Faker::Adjective.negative, Faker::Hacker.adjective]
+
       post.comments.create!(user: user,
                                 content: "this comment is #{adjectives.sample}",
                                 parent: comment)

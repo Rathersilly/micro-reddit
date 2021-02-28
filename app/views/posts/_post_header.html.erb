@@ -1,9 +1,8 @@
 <div class="post_header">
   <div class="vote_container" >
-    <div>uparrow</div>
-    <div>score</div>
-    <div>downarrow</div>
-    <div><%# post.score %></div>
+    <div><%= post.upvotes %></div>
+    <div><%= post.upvotes - post.downvotes %></div>
+    <div><%= post.downvotes %></div>
 
   
   </div>

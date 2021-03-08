@@ -13,6 +13,7 @@
   <div class="post_title_container">
     <%= link_to post.title, post_path(post.id), class: "post_title" %>
     <div>submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %></div>
+    <%= link_to "#{post.comments.count} comments", post_path(id: post.id) %> 
   </div>
 
 </div>

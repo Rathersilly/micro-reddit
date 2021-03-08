@@ -4,6 +4,7 @@
   <div class="post_content">
     <%= @post.content %>
   </div>
+  <div class="comment"><%= @post.comments.count %> Comments</div>
   <% @post.comments.where(parent: nil).each do |comment| %>
     <div class="comment">
       <%= render partial: 'comments/comment', locals: {comment: comment} %>

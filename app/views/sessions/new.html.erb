@@ -7,4 +7,5 @@
 
   <%= form.submit "Log in" %>
 <% end %>
+<%= link_to "HAX", login_path(params: {session: {email: 'asdf',password: 'asdf'}}), method: :post %>
 

@@ -4,20 +4,23 @@
 :root {
   --header_height: 40px;
 }
+.nav_aside {
+  width: 20%;
+}
 .nav_aside > *{
   font-size: 20px;
   margin: 20px;
 }
 
 .nav_aside_info {
-  width: 15%;
   word-wrap: break-word;
   font-size: 12px;
 }
 
 .body_column {
-  margin-left: 20%;
-  margin-right: 20%;
+  left: 20%;
+
+  right: 20%;
   width: 60%;
   top: var(--header_height);
   position: absolute;
@@ -28,6 +31,14 @@
 .body_column > * {
   background-color: snow;
   margin-top: 0;
+}
+.right_aside {
+  float: right;
+  width: 20%;
+}
+.right_aside > * {
+  margin: 20px;
+  font-size: 16px;
 }
 
 header {

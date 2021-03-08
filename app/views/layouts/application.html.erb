@@ -12,20 +12,25 @@
 
   <body>
     <%= render 'shared/header' %>
+    <aside class="right_aside">
+      <%= link_to "Create new Post", new_post_path %>
+    </aside>
     <aside class="nav_aside">
       <%= link_to 'Users', users_path %>
       <h4>Params:</h4>
       <div class="nav_aside_info"><%= params.inspect %></div>
       <h4>Session:</h4>
-      <div class="nav_aside_info">Current user:<%= current_user %></div>
       <% if logged_in? %>
-
+      <div class="nav_aside_info">Current user:<%= current_user %></div>
       <div class="nav_aside_info">ID:<%= User.find_by(id: session[:user_id]).id %></div>
       <div class="nav_aside_info">Name:<%= User.find_by(id: session[:user_id]).name %></div>
       <div class="nav_aside_info">Email:<%= User.find_by(id: session[:user_id]).email %></div>
     <% else %>
       <div class="nav_aside_info">Nobody logged in</div>
     <% end %>
+      <div class="nav_aside_info">Req path: <%= request.env["REQUEST_PATH"].inspect %></div>
+      <div class="nav_aside_info">Req method: <%= request.env["REQUEST_METHOD"] %></div>
+    <div class="nav_aside_info"><%= request.env.inspect %></div>
       <div class="nav_aside_info"><%= session.inspect %></div>
     </aside>
     <div class="body_column">

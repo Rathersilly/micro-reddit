@@ -9,7 +9,9 @@
 10.times do |i|
   name = Faker::Name.first_name
   user = User.create!(name: name,
-                      email: "#{name}#{i}@example.com")
+                      email: "#{name}#{i}@example.com",
+                      password: 'asdf',
+                      password_confirmation: 'asdf')
 end
 
 users = User.all

@@ -7,6 +7,8 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  #config.logger = Logger.new(STDOUT)
+  #config.logger.level = Logger::ERROR
 
   config.cache_classes = false
   config.action_view.cache_template_loading = true

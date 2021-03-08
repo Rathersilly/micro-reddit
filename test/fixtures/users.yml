@@ -3,7 +3,9 @@
 bob:
   name: "Bob Dobalina"
   email: "bob@example.com"
+  password_digest: <%= User.digest('asdf') %>
 
 one:
-  name: "Bob Dobalina"
-  email: "bob@example.com"
+  name: "Rob Dobalina"
+  email: "rob@example.com"
+  password_digest: <%= User.digest('asdf') %>

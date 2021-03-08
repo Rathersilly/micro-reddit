@@ -1,14 +1,15 @@
 <header>
   <div class="navleft">
-    <div class="header_title">
-      ASDF
-    </div>
+    <%= link_to 'Micro-Reddit!', root_path, class: 'header_title' %>
   </div>
   <div class="navright">
 
-      <p class="navitem" >Sign up</p>
-      <p class="navitem" >Log in</p>
-      <p class="navitem" >ASDF</p>
+    <% if logged_in? %>
+      <%= link_to 'Log out', logout_path, method: :delete, class: "navitem" %>
+    <% else %>
+      <%= link_to 'Sign up', signup_path, class: "navitem" %>
+      <%= link_to 'Log in', login_path, class: "navitem" %>
+    <% end %>
   </div>
 
 

@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: MyString
+comment_one:
+  user: bob
   content: MyString
   post: one
+  parent: nil
 
-two:
-  user: MyString
+comment_two:
+  user: bob
   content: MyString
   post: two
+  parent: nil

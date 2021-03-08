@@ -13,7 +13,7 @@
   <body>
     <%= render 'shared/header' %>
     <aside class="right_aside">
-      <%= link_to "Create new Post", new_post_path %>
+      <%= link_to("Create new Post", new_post_path) if logged_in? %>
     </aside>
     <aside class="nav_aside">
       <%= link_to 'Users', users_path %>
@@ -30,10 +30,12 @@
     <% end %>
       <div class="nav_aside_info">Req path: <%= request.env["REQUEST_PATH"].inspect %></div>
       <div class="nav_aside_info">Req method: <%= request.env["REQUEST_METHOD"] %></div>
-    <div class="nav_aside_info"><%= request.env.inspect %></div>
       <div class="nav_aside_info"><%= session.inspect %></div>
     </aside>
     <div class="body_column">
+      <% flash.each do |msg_type, msg| %>
+        <%= content_tag(:div, "flash: #{msg_type} #{msg}", class: "flash") %>
+      <% end %>
       <%= yield %>
     </div>
   </body>
